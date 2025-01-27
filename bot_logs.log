@@ -1,0 +1,105 @@
+aiogram.dispatcher 2024-03-03 21:47:13,457 INFO Start polling
+aiogram.dispatcher 2024-03-03 21:47:13,769 INFO Run polling for bot @video_hobot id=6907733036 - 'Video Hobot'
+aiogram.dispatcher 2024-03-03 21:47:39,358 INFO Start polling
+aiogram.dispatcher 2024-03-03 21:47:39,702 INFO Run polling for bot @video_hobot id=6907733036 - 'Video Hobot'
+aiogram.dispatcher 2024-03-03 21:48:40,402 INFO Start polling
+aiogram.dispatcher 2024-03-03 21:48:40,718 INFO Run polling for bot @video_hobot id=6907733036 - 'Video Hobot'
+aiogram.dispatcher 2024-03-03 21:49:00,514 INFO Start polling
+aiogram.dispatcher 2024-03-03 21:49:01,212 INFO Run polling for bot @kzsmart_bot id=6985403950 - 'KZ Smart 🛍️'
+aiogram.event 2024-03-03 21:49:23,580 INFO Update id=407252184 is not handled. Duration 591 ms by bot id=6985403950
+aiogram.event 2024-03-03 21:49:23,585 ERROR Cause exception while process update id=407252184 by bot id=6985403950
+TelegramBadRequest: Telegram server says - Bad Request: wrong file identifier/HTTP URL specified
+Traceback (most recent call last):
+  File "/Users/aleksandrkulikov/Desktop/Python/Guidler/handlers/default/start.py", line 52, in start
+    await message.answer_animation(
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/client/bot.py", line 441, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/client/session/base.py", line 257, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/client/session/aiohttp.py", line 179, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: wrong file identifier/HTTP URL specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/fsm/storage/memory.py", line 56, in lock
+    yield
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/Desktop/Python/Guidler/handlers/default/start.py", line 58, in start
+    await message.answer_animation(
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/client/bot.py", line 441, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/client/session/base.py", line 257, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/client/session/aiohttp.py", line 179, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aleksandrkulikov/.pyenv/versions/3.11.0/lib/python3.11/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: wrong file identifier/HTTP URL specified
+aiogram.dispatcher 2024-03-03 21:50:48,987 INFO Start polling
+aiogram.dispatcher 2024-03-03 21:50:49,280 INFO Run polling for bot @video_hobot id=6907733036 - 'Video Hobot'
+aiogram.event 2024-03-03 21:51:02,048 INFO Update id=345371886 is handled. Duration 874 ms by bot id=6907733036
