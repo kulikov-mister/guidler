@@ -1,8 +1,8 @@
 # utils/imgur_downloader.py
 from imgurpython import ImgurClient
 
-Client_ID= "6a1229976958828"
-Client_secret= "4a3c33feaf367061898cddbb1c3b0e238f2f13ae"
+Client_ID= "client id"
+Client_secret= "secret"
 
 client = ImgurClient(Client_ID, Client_secret)
 
